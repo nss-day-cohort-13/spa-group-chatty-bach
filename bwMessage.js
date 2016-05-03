@@ -5,7 +5,7 @@ var messages = [];
 		addNewMessage(newItem) {
 			for (var i = 0; i < return messages.length; i++) {
 				return newItem[i];
-				messages.push(newItem[i]);
+				// messages.push(newItem[i]);  *** NOT SURE WHERE THIS IS SUPPOSED TO GO: IN THIS FUNCTION OR A FUNCTION OF ITS OWN ***
 			}
 		}
 
