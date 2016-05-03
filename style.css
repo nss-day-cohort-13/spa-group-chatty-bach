@@ -1,0 +1,35 @@
+/* Nav Bar */
+
+#navBar {
+  border-bottom: black solid 3px;
+  padding-bottom: .5em;
+}
+
+#logo {
+  background-color: navy;
+  color: white;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+#options {
+  display: inline-block;
+  width: 75%;
+  text-align: center;
+}
+
+#userInput {
+  width: 55%;
+}
+
+#buttons {
+  display: inline-block;
+}
+
+/* Message Area */
+
+#msgArea {
+  border: black solid 2px;
+  min-height: 400px;
+  min-width: 80%;
+}
