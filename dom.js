@@ -22,3 +22,36 @@
 		 msgArea.addEventListener("click", msgDelete);					// Listens for click; runs function to check event target,
 		 																														// If needed, calls method to delete
 
+// Functions
+
+	// validateKeyup() - Callback from userInput
+		 function validateKeyup(key) {
+		 		if (key.which === 13) {
+		 			msgSubmit();
+		 		}
+		 }
+
+ 	// toggleDark() - Callback from darkTheme
+ 			function toggleDark() {
+
+ 			}
+
+  // toggleLarge() - Callback from largeText
+  		function toggleLarge() {
+
+  		}
+
+	// msgSubmit() - Callback from buttonSubmit
+  		function msgSubmit() {
+
+  		}
+
+	// msgClearAll() - Callback from buttonClearAll
+  		function msgClearAll() {
+
+  		}
+
+	// msgDelete() - Callback from msgArea
+			function msgDelete() {
+
+			}
