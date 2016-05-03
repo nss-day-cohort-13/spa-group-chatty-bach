@@ -31,5 +31,6 @@
 #msgArea {
   border: black solid 2px;
   min-height: 400px;
-  min-width: 80%;
+  min-width: 60%;
+  margin: 20px;
 }
