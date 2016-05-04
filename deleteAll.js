@@ -8,18 +8,16 @@ var Chatty = (function (aug) {
 
       if (clickEvent.target === userDelete[i]) {
         msgArea.removeChild(event.target.parentNode);
-        Chatty.deleteData(i);
+        Chatty.deleteData(i, 1);
       }
     }
   }
 
   aug.deleteAll = function () {
-
-    var userDeleteAll = document.getElementById("clear");
-
-    if (clickEvent.target === userDeleteAll) {
-      messages = "";
-    }
+    var msgLength = Chatty.getMessages().length;
+    console.log("message length pre splice", msgLength);
+    msgArea.innerHTML = "";
+    Chatty.deleteData(0, msgLength);
   }
 
   return aug;
