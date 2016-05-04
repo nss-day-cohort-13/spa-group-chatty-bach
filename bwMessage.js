@@ -2,12 +2,22 @@ var Chatty = (function(aug){
 	var messages = [];
 
 		aug.addNewMessage = function(newItem){
-			// for (var i = 0; i < newItem.length; i++) {
-				if(newItem === "" || newItem === " "){
+				var para = document.getElementsByTagName("p");
+				if(newItem === "" || newItem === " "){       //TRY TO FIX MULTIPLE SPACES
 					alert("Text field cannot be empty");
-				} else {
-				messages.push(newItem);
-				msgArea.innerHTML += "<p>" + newItem + " <button type='button' class='delete'>Delete</button></p>";
+				} else if (messages.length >= 20) {
+					messages.shift(messages[0]);    //HOW CAN YOU USE THE ARRAY TO BUILD THE DOM
+					msgArea.removeChild(para[0]);
+					messages.push(newItem);
+					msgArea.innerHTML
+									  += "<p>" +
+									  newItem +
+									  " <button type='button' class='delete'>Delete</button></p>";
+				}else {
+					messages.push(newItem);
+					msgArea.innerHTML += "<p>" +
+									  newItem +
+									  " <button type='button' class='delete'>Delete</button></p>";
 				};
 
 		};
