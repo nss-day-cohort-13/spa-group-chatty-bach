@@ -8,8 +8,7 @@ var Chatty = (function (aug) {
 
       if (clickEvent.target === userDelete[i]) {
         msgArea.removeChild(event.target.parentNode);
-        Chatty.getMessages();
-        messages.shift(messages[i]);
+        Chatty.deleteData(i);
       }
     }
   }
