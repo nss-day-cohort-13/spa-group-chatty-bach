@@ -54,4 +54,5 @@
 		// the value of the text input is passed into Chatty.addNewMessage()
   		function msgSubmit() {
   			Chatty.addNewMessage(userInput.value);
+  			userInput.value="";
   		}
