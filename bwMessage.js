@@ -1,4 +1,4 @@
-var chatty = (function{
+var Chatty = (function(){
 var messages = [];
 
 	return {
@@ -23,6 +23,6 @@ var messages = [];
 		//  }
 		}
 	}
-};
+}(Chatty || {}));
 
 
