@@ -12,7 +12,7 @@ var Chatty= (function(xhr){
 			jsonMessages.push(data.messages[i]);
 		}
 		console.log("json messages: ", jsonMessages);
-		Chatty.addMessages(jsonMessages);
+		Chatty.addNewMessage(jsonMessages);
 	}
 
 	xhr.getJson= function () {
