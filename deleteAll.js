@@ -1,8 +1,8 @@
 var Chatty = (function (aug) {
 
-  aug.deleteMsg = function () {
+  aug.deleteMsg = function (clickEvent) {
 
-   var userDelete = getElementsByClassName("delete");
+   var userDelete = document.getElementsByClassName("delete");
 
     for (var i = 0; i < userDelete.length; i++) {
 
