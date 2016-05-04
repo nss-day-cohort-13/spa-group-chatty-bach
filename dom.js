@@ -21,7 +21,13 @@
 		 var msgArea = document.getElementById("msgArea");			// Grabs the output div where all messages appear
 		 msgArea.addEventListener("click", Chatty.deleteMsg);		// Listens for click; runs function that calls Chatty.deleteMsg and passes in event.target
 
-		 var contentWrap = document.getElementById("wrapper");	// Grabs the content wrapper for toggling light/dark themes and regular/large text
+		 // All variables below are defined for the purpose of toggling light/dark classes
+		 var headerDiv = document.getElementById("navBar");
+		 var logoDiv = document.getElementById("logo");
+		 var h1Text = document.getElementsByTagName("h1");
+		 var h2Text = document.getElementsByTagName("h2");
+		 var mainContent = document.getElementById("main-content");
+		 var contentWrap = document.getElementById("wrapper");
 
 // Functions
 
@@ -39,7 +45,13 @@
  		// When the dark theme checkbox changes checked/unchecked,
  		// the page's content wrapper toggles the class for dark theme
  			function toggleDark() {
- 				contentWrap.classList.toggle("dark");
+ 				console.log("click");
+ 				mainContent.classList.toggle("dark-bg");
+ 				headerDiv.classList.toggle("dark-h-bg");
+ 				logoDiv.classList.toggle("dark-bg");
+ 				h1Text[0].classList.toggle("dark-h-text");
+ 				h2Text[0].classList.toggle("dark-h-text");
+ 				msgArea.classList.toggle("dark-msg-area");
  			}
 
   // toggleLarge() - Callback from largeText
