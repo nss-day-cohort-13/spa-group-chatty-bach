@@ -14,6 +14,8 @@ var Chatty = (function (aug) {
     }
   }
 
+  aug.deleteAll = function ();
+
   return aug;
 
 }(Chatty || {}));
