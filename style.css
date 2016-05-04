@@ -34,3 +34,18 @@
   min-width: 60%;
   margin: 20px;
 }
+
+/*========================*/
+/* Leave these classes at the bottom of the cascade */
+
+/* Dark theme */
+
+.dark {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.large {
+  font-size: 1.5em;
+}
