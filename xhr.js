@@ -10,13 +10,14 @@ var Chatty= (function(xhr){
 
 		for (i=0; i<data.messages.length; i++) {
 			jsonMessages.push(data.messages[i]);
+			// Chatty.messages.push(data.messages[i]);
 		}
 		console.log("json messages: ", jsonMessages);
 	}
 
 	xhr.getJson= function () {
 		return jsonMessages
-}
-return xhr
+	}
+	return xhr
 }(Chatty || {}));
 
