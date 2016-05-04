@@ -3,7 +3,7 @@ var Chatty = (function(aug){
 
 	// return {
 		aug.addNewMessage = function(newItem){
-			for (var i = 0; i < messages.length; i++) {
+			for (var i = 0; i < newItem.length; i++) {
 				messages.push(newItem[i]);
 				msgArea.innerHTML += "<p>" + newItem[i] + "<button type='button' class='delete'>Delete</button></p>";
 			};
