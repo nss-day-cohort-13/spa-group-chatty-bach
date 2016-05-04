@@ -13,8 +13,8 @@ var Chatty = (function(aug){
 			return messages;
 		};
 
-		aug.deleteData = function(ex) {
-			messages.splice(ex, 1);
+		aug.deleteData = function(ex, span) {
+			messages.splice(ex, span);
 		}
 
 		// aug.addJson = function() {
