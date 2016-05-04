@@ -2,7 +2,7 @@ var Chatty = (function(aug){
 	var messages = [];
 
 	// return {
-		aug.addNewMessage(newItem) {
+		aug.addNewMessage = function(newItem){
 			var msgOutput = document.getElementById("msgArea");
 			for (var i = 0; i < return messages.length; i++) {
 				messages.push(newItem[i]);
