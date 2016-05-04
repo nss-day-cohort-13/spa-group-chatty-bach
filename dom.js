@@ -14,12 +14,12 @@
 		 var buttonSubmit = document.getElementById("submit");	// Grabs submit button
 		 buttonSubmit.addEventListener("click", msgSubmit);			// Listens for click; runs function to begin the process of creating a new message
 
-		 var buttonClearAll = document.getElementById("clear");	// Grabs clear button
-		 buttonClearAll.addEventListener("click", msgClearAll);	// Listens for click; runs function to begin the process of clearing all messages
+		 var buttonClearAll = document.getElementById("clear");				// Grabs clear button
+		 buttonClearAll.addEventListener("click", Chatty.deleteAll);		// Listens for click; calls Chatty.deleteAll()
 
 	// Main content elements
 		 var msgArea = document.getElementById("msgArea");			// Grabs the output div where all messages appear
-		 msgArea.addEventListener("click", Chatty.deleteAll);		// Listens for click; runs function to check event target,
+		 msgArea.addEventListener("click", msgDelete);					// Listens for click; runs function to check event target,
 		 																														// If needed, calls method to delete
 
 		 var contentWrap = document.getElementById("wrapper");	// Grabs the content wrapper for toggling light/dark themes and regular/large text
