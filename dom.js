@@ -19,12 +19,17 @@
 
 	// Main content elements
 		 var msgArea = document.getElementById("msgArea");			// Grabs the output div where all messages appear
-		 msgArea.addEventListener("click", msgDelete);					// Listens for click; runs function to check event target,
+		 msgArea.addEventListener("click", Chatty.deleteAll);		// Listens for click; runs function to check event target,
 		 																														// If needed, calls method to delete
+
+		 var contentWrap = document.getElementById("wrapper");	// Grabs the content wrapper for toggling light/dark themes and regular/large text
 
 // Functions
 
 	// validateKeyup() - Callback from userInput
+		// When any keypress is heard in the user text input,
+		// this function checks to see if the key was "return/enter".
+		// If "return", it runs msgSubmit().
 		 function validateKeyup(key) {
 		 		if (key.which === 13) {
 		 			msgSubmit();
@@ -32,26 +37,29 @@
 		 }
 
  	// toggleDark() - Callback from darkTheme
+ 		// When the dark theme checkbox changes checked/unchecked,
+ 		// the page's content wrapper toggles the class for dark theme
  			function toggleDark() {
-
+ 				contentWrap.classList.toggle("dark");
  			}
 
   // toggleLarge() - Callback from largeText
+  	// When the large text checkbox changes checked/unchecked,
+  	// the page's content wrapper toggles the class for large text
   		function toggleLarge() {
-
+  			contentWrap.classList.toggle("large");
   		}
 
 	// msgSubmit() - Callback from buttonSubmit
+		// When the submit button is clicked (or a return keypress is heard),
+		// the value of the text input is passed into Chatty.addNewMessage()
   		function msgSubmit() {
-
-  		}
-
-	// msgClearAll() - Callback from buttonClearAll
-  		function msgClearAll() {
-
+  			Chatty.addNewMessage(userInput.value);
   		}
 
 	// msgDelete() - Callback from msgArea
-			function msgDelete() {
-
+		// When a delete button is clicked,
+		// the parent message of the delete button is passed into Chatty.deleteMsg()
+			function msgDelete(clickEvent) {
+				Chatty.deleteMsg(clickEvent.target.parentNode);
 			}
