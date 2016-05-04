@@ -2,7 +2,7 @@ var Chatty = (function (aug) {
 
   aug.deleteMsg = function () {
 
-   var userDelete = getElementsByClassName("delete");
+    var userDelete = getElementsByClassName("delete");
 
     for (var i = 0; i < userDelete.length; i++) {
 
@@ -14,7 +14,12 @@ var Chatty = (function (aug) {
     }
   }
 
-  aug.deleteAll = function () {}
+  aug.deleteAll = function () {
+
+    var userDeleteAll = getElementById("clear");
+
+    if (clickEvent.target === )
+  }
 
   return aug;
 
