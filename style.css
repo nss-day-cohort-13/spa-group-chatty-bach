@@ -1,7 +1,7 @@
 /* Nav Bar */
 
 #navBar {
-  border-bottom: black solid 3px;
+  border-bottom: 3px solid;
   padding-bottom: .5em;
 }
 
@@ -29,8 +29,25 @@
 /* Message Area */
 
 #msgArea {
-  border: black solid 2px;
+  border: 2px solid;
   min-height: 400px;
   min-width: 60%;
   margin: 20px;
+}
+
+/*========================*/
+/* Leave these classes at the bottom of the cascade */
+
+/* Dark theme */
+
+.dark {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Large theme */
+
+.large {
+  font-size: 1.5em;
 }
