@@ -1,8 +1,8 @@
-var Chatty = (function(){
-var messages = [];
+var Chatty = (function(aug){
+	var messages = [];
 
-	return {
-		function addNewMessage(newItem) {
+	// return {
+		aug.addNewMessage(newItem) {
 			var msgOutput = document.getElementById("msgArea");
 			for (var i = 0; i < return messages.length; i++) {
 				messages.push(newItem[i]);
@@ -10,9 +10,19 @@ var messages = [];
 			};
 		}
 
-		newItem.getMessages = function() {
+		aug.getMessages = function() {
 			return messages;
 		};
+
+		aug.addJson = function() {
+			var jsonMessages = Chatty.getJson();
+			for (var i = 0; i < jsonMessages.length; i++) {
+				messages.push(jsonMessages[i])
+			};
+
+		};
+
+
 
 		// function deleteMsg(arr, ex) {
 	 // 	   for(var i = arr.length; i--;) {
@@ -23,6 +33,7 @@ var messages = [];
 		//  }
 		}
 	}
+	return aug
 }(Chatty || {}));
 
 
