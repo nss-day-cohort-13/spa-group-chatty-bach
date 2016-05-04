@@ -14,13 +14,13 @@ var Chatty = (function(aug){
 			return messages;
 		};
 
-		aug.addJson = function() {
-			var jsonMessages = Chatty.getJson();
-			for (var i = 0; i < jsonMessages.length; i++) {
-				messages.push(jsonMessages[i])
-			};
+		// aug.addJson = function() {
+		// 	var jsonMessages = Chatty.getJson();
+		// 	for (var i = 0; i < jsonMessages.length; i++) {
+		// 		messages.push(jsonMessages[i])
+		// 	};
 
-		};
+		// };
 
 
 
