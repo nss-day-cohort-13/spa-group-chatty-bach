@@ -10,9 +10,11 @@ var Chatty= (function(xhr){
 
 		for (i=0; i<data.messages.length; i++) {
 			jsonMessages.push(data.messages[i]);
+			Chatty.addNewMessage(jsonMessages[i]);
+
 		}
 		console.log("json messages: ", jsonMessages);
-		Chatty.addNewMessage(jsonMessages);
+		// Chatty.addNewMessage(jsonMessages);
 	}
 
 	xhr.getJson= function () {
