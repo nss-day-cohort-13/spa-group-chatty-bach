@@ -15,12 +15,11 @@
 		 buttonSubmit.addEventListener("click", msgSubmit);			// Listens for click; runs function to begin the process of creating a new message
 
 		 var buttonClearAll = document.getElementById("clear");				// Grabs clear button
-		 buttonClearAll.addEventListener("click", Chatty.deleteAll);		// Listens for click; calls Chatty.deleteAll()
+		 // buttonClearAll.addEventListener("click", Chatty.deleteAll);		// Listens for click; calls Chatty.deleteAll()
 
 	// Main content elements
 		 var msgArea = document.getElementById("msgArea");			// Grabs the output div where all messages appear
-		 msgArea.addEventListener("click", msgDelete);					// Listens for click; runs function to check event target,
-		 																														// If needed, calls method to delete
+		 msgArea.addEventListener("click", routeDelete);					// Listens for click; runs function that calls Chatty.deleteMsg and passes in event.target
 
 		 var contentWrap = document.getElementById("wrapper");	// Grabs the content wrapper for toggling light/dark themes and regular/large text
 
@@ -60,6 +59,6 @@
 	// msgDelete() - Callback from msgArea
 		// When a delete button is clicked,
 		// the parent message of the delete button is passed into Chatty.deleteMsg()
-			function msgDelete(clickEvent) {
-				Chatty.deleteMsg(clickEvent.target.parentNode);
+			function routeDelete(clickEvent) {
+				Chatty.deleteMsg(clickEvent.target);
 			}
