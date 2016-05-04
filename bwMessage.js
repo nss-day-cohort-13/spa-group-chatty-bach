@@ -2,17 +2,26 @@ var chatty = (function{
 var messages = [];
 
 	return {
-		addNewMessage(newItem) {
+		function addNewMessage(newItem) {
+			var msgOutput = document.getElementById("msgArea");
 			for (var i = 0; i < return messages.length; i++) {
-				return newItem[i];
-				// messages.push(newItem[i]);  *** NOT SURE WHERE THIS IS SUPPOSED TO GO: IN THIS FUNCTION OR A FUNCTION OF ITS OWN ***
-			}
+				messages.push(newItem[i]);
+				msgOutput.innerHTML += newItem[i];
+			};
 		}
 
 		newItem.getMessages = function() {
 			return messages;
 		};
 
+		function deleteMsg(arr, ex) {
+	 	   for(var i = arr.length; i--;) {
+        if(arr[i] === ex) {
+            arr.splice(i, 1);
+        }
+      }
+		 }
+		}
 	}
 };
 
