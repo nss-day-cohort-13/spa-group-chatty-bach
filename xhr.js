@@ -9,15 +9,17 @@ var Chatty= (function(xhr){
 	function fetchMsg () {
 		var data= JSON.parse(this.responseText);
 
-		for (i=0; i<data.messages.length; i++) {
+		for (i = 0; i < data.messages.length; i++) {
 			jsonMessages.push(data.messages[i]);
 			Chatty.addNewMessage(jsonMessages[i]);
 		}
 	}
 
 	xhr.getJson= function () {
-		return jsonMessages
+		return jsonMessages;
 	}
-	return xhr
+
+	return xhr;
+
 }(Chatty || {}));
 
