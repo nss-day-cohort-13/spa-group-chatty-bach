@@ -6,7 +6,7 @@ var Chatty = (function(aug){
 			var msgOutput = document.getElementById("msgArea");
 			for (var i = 0; i < return messages.length; i++) {
 				messages.push(newItem[i]);
-				msgOutput.innerHTML += "<p>" + newItem[i] + "<button type="button" class="delete">Delete</button></p>";
+				msgOutput.innerHTML += "<p>" + newItem[i] + "<button type='button' class='delete'>Delete</button></p>";
 			};
 		}
 
