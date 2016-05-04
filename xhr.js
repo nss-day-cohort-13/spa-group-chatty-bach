@@ -1,5 +1,6 @@
 var Chatty= (function(xhr){
-	var jsonMessages= []; //or other array name that the parse is being pushed to
+
+	var jsonMessages= [];
 	var loadJson = new XMLHttpRequest();
 	loadJson.addEventListener("load", fetchMsg);
 	loadJson.open("GET", "messages.json");
@@ -11,10 +12,7 @@ var Chatty= (function(xhr){
 		for (i=0; i<data.messages.length; i++) {
 			jsonMessages.push(data.messages[i]);
 			Chatty.addNewMessage(jsonMessages[i]);
-
 		}
-		console.log("json messages: ", jsonMessages);
-		// Chatty.addNewMessage(jsonMessages);
 	}
 
 	xhr.getJson= function () {
