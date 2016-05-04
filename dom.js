@@ -15,7 +15,7 @@
 		 buttonSubmit.addEventListener("click", msgSubmit);			// Listens for click; runs function to begin the process of creating a new message
 
 		 var buttonClearAll = document.getElementById("clear");				// Grabs clear button
-		 buttonClearAll.addEventListener("click", Chatty.deleteAll);	// Listens for click; calls Chatty.deleteAll()
+		  buttonClearAll.addEventListener("click", Chatty.deleteAll);	// Listens for click; calls Chatty.deleteAll()
 
 	// Main content elements
 		 var msgArea = document.getElementById("msgArea");			// Grabs the output div where all messages appear
