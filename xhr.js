@@ -1,9 +1,9 @@
 var Chatty= (function(xhr){
 	var messages= []; //or other array name that the parse is being pushed to
-	var getMessages = new XMLHttpRequest();
-	getMessages.addEventListener("load", fetchMsg);
-	getMessages.open("GET", "messages.json");
-	getMessages.send();
+	var loadJson = new XMLHttpRequest();
+	loadJson.addEventListener("load", fetchMsg);
+	loadJson.open("GET", "messages.json");
+	loadJson.send();
 
 	function fetchMsg () {
 		var data= JSON.parse(this.responseText);
@@ -14,7 +14,7 @@ var Chatty= (function(xhr){
 		console.log(messages);
 	}
 
-	xhr.getMessage= function () {
+	xhr.getJson= function () {
 		return messages
 }
 return xhr
