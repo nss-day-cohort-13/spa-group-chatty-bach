@@ -55,4 +55,14 @@
   		function msgSubmit() {
   			Chatty.addNewMessage(userInput.value);
   			userInput.value="";
+  			buttonClearAll.disabled=false;
   		}
+
+
+
+
+
+
+
+
+
