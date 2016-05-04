@@ -4,34 +4,47 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Chatty! Chatty! Kathy!</title>
-
 	<link rel="stylesheet" href="bootStrapNormalize.css">
-
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 	<div id="wrapper">
+
 		<header id="navBar">
+
 			<div id="logo">
 				<h1>Chatty!</h1>
 			</div>
+
 			<div id="options">
+
 				<input type="text" id="userInput" placeholder="Type Message Here">
 				<label><input type="checkbox" id="darkTheme">Dark Theme</label>
 				<label><input type="checkbox" id="largeText">Large Text</label>
+
 			</div>
+
 			<div id="buttons">
 				<button type="button" id="submit">submit</button>
 				<button type="button" id="clear">clear all text</button>
 			</div>
+
 		</header>
-		<h2>messages:</h2>
+
+		<h2>Messages:</h2>
+
 		<div id="msgArea">
+
 		</div>
+
 	</div>
-	<script type="text/javascript" src="deleteAll.js"></script>
-	<script type="text/javascript" src="bwMessage.js"></script>
+
+	<script src="deleteAll.js"></script>
+	<script src="bwMessage.js"></script>
 	<script src="xhr.js"></script>
-	<script src="dom.js" type="text/javascript" charset="utf-8"></script>
+	<script src="dom.js"></script>
+
 </body>
 </html>
