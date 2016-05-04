@@ -7,7 +7,7 @@ var Chatty = (function(aug){
 				messages.push(newItem[i]);
 				msgArea.innerHTML += "<p>" + newItem[i] + "<button type='button' class='delete'>Delete</button></p>";
 			};
-		}
+		};
 
 		aug.getMessages = function() {
 			return messages;
@@ -30,8 +30,8 @@ var Chatty = (function(aug){
   //       }
   //     }
 		//  }
-		}
-	}
+		// }
+	// }
 	return aug;
 }(Chatty || {}));
 
