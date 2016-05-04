@@ -16,6 +16,7 @@ var Chatty = (function (aug) {
     console.log("message length pre splice", msgLength);
     msgArea.innerHTML = "";
     Chatty.deleteData(0, msgLength);
+    buttonClearAll.disabled=true;
   }
 
   return aug;
