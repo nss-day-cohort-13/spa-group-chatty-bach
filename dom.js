@@ -45,7 +45,6 @@
  		// When the dark theme checkbox changes checked/unchecked,
  		// the page's content wrapper toggles the class for dark theme
  			function toggleDark() {
- 				console.log("click");
  				mainContent.classList.toggle("dark-bg");
  				headerDiv.classList.toggle("dark-h-bg");
  				logoDiv.classList.toggle("dark-bg");
@@ -65,7 +64,11 @@
 		// When the submit button is clicked (or a return keypress is heard),
 		// the value of the text input is passed into Chatty.addNewMessage()
   		function msgSubmit() {
-  			Chatty.addNewMessage(userInput.value);
-  			userInput.value="";
-  			buttonClearAll.disabled=false;
+  			if(userInput.value === "" || userInput.value === " ") {
+					alert("Text field cannot be empty");
+				} else {
+		  			Chatty.addNewMessage(userInput.value);
+		  			userInput.value = "";
+		  			buttonClearAll.disabled = false;
+	  			}
   		}
