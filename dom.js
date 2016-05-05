@@ -52,6 +52,10 @@
  				h1Text[0].classList.toggle("dark-h-text");
  				h2Text[0].classList.toggle("dark-h-text");
  				msgArea.classList.toggle("dark-msg-area");
+ 				var messageClasses = document.getElementsByClassName("message");
+ 				for (var i = 0; i < messageClasses.length; i++) {
+ 					messageClasses[i].classList.toggle("dark-bg");
+ 				}
  			}
 
   // toggleLarge() - Callback from largeText
@@ -65,7 +69,8 @@ var edit= false;
 		// When the submit button is clicked (or a return keypress is heard),
 		// the value of the text input is passed into Chatty.addNewMessage()
   		function msgSubmit() {
-  			if(userInput.value === "" || userInput.value === " ") {
+		  	var pattern = /\s/g;
+				if( userInput.value === "" || (userInput.value.match(pattern))) {
 					alert("Text field cannot be empty");
 				} else if (edit===true){
 					console.log("editmode");
@@ -74,6 +79,7 @@ var edit= false;
 					editMsg.innerHTML= userInput.value;
 					userInput.value="";
 					edit=false;
+
 				} else {
 		  			Chatty.addNewMessage(userInput.value);
 		  			userInput.value = "";
@@ -83,7 +89,8 @@ var edit= false;
 
   		function editMsg() {
   			edit= true;
-  			var userMessage=event.target.parentNode.querySelector(".userMsg");
+  			var userMessage=event.target.parentNode.querySelector(".message");
+  			console.log(userMessage);
   			id=userMessage.id;
   			console.log(id);
   			if(event.target.className=== "edit") {
@@ -91,4 +98,6 @@ var edit= false;
   				userInput.value= userMessage.innerHTML;
   			}
   			return id;
+
+
   		}

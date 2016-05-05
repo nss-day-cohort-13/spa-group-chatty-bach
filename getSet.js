@@ -6,13 +6,16 @@ var Chatty = (function(aug) {
 
 	var outputDiv = document.getElementById("msgArea");
 
-	function Message (string, handle) {
+	function Message (string, handle, updateTime) {
 		this.string = string;
 		this.handle = handle;
+		this.time = updateTime;
 	}
 
 	aug.addNewMessage = function (newItem) {
-		var newMsg = new Message(newItem, `msg${idCounter}`);
+		var updateTime = new Date();
+		updateTime = updateTime.toLocaleTimeString() + " " + updateTime.toLocaleDateString();
+		var newMsg = new Message(newItem, `msg${idCounter}`, updateTime);
 		messages.push(newMsg);
 		idCounter++;
 		Chatty.loadMessages();
@@ -22,27 +25,29 @@ var Chatty = (function(aug) {
 		return messages;
 	}
 
-	aug.deleteData = function (clickEvent) {
-		if (clickEvent.target.className === "delete") {
-		var ex = clickEvent.currentTarget.id;
+	aug.deleteData = function (ex) {
 		messages = messages.filter(function(message) {
 			return message.handle !== ex;
 		});
 		Chatty.loadMessages();
-	}
 }
 
 	aug.loadMessages = function () {
 		var buildHTML = "";
+		if (messages.length >= 20){
+			messages.shift(messages[0]);
+		};
 		for (var i = 0; i < messages.length; i++) {
-			buildHTML += `<div><p class='userMsg'id="${messages[i].handle}">${messages[i].string}</p>` +
-									 `<button class="edit">Edit</button><button class="delete">Delete</button></div>`;
+
+			buildHTML += `<p id="${messages[i].handle}">${messages[i].string} ${messages[i].time} <button class="Edit">Edit</button><button class="delete">Delete</button></p>`;
+
 		}
 		outputDiv.innerHTML = buildHTML;
 		for (var i = 0; i < messages.length; i++) {
-			document.getElementById(`${messages[i].handle}`).addEventListener("click", Chatty.deleteData);
+			document.getElementById(`${messages[i].handle}`).addEventListener("click", Chatty.deleteMsg);
 		}
 	}
+
 
 	return aug;
 

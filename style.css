@@ -100,6 +100,13 @@ h2 {
   background: #fff;
 }
 
+.message {
+  background: #F1F3E3;
+  padding: 10px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+  border-radius: 2px;
+}
+
 .msgArea button {
   font-size: .8em;
 }
