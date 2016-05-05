@@ -22,14 +22,11 @@ var Chatty = (function(aug) {
 		return messages;
 	}
 
-	aug.deleteData = function (clickEvent) {
-		if (clickEvent.target.tagName === "BUTTON") {
-		var ex = clickEvent.currentTarget.id;
+	aug.deleteData = function (ex) {
 		messages = messages.filter(function(message) {
 			return message.handle !== ex;
 		});
 		Chatty.loadMessages();
-	}
 }
 
 	aug.loadMessages = function () {
@@ -40,7 +37,7 @@ var Chatty = (function(aug) {
 		}
 		outputDiv.innerHTML = buildHTML;
 		for (var i = 0; i < messages.length; i++) {
-			document.getElementById(`${messages[i].handle}`).addEventListener("click", Chatty.deleteData);
+			document.getElementById(`${messages[i].handle}`).addEventListener("click", Chatty.deleteMsg);
 		}
 	}
 
