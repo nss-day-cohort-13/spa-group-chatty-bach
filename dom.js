@@ -68,8 +68,8 @@
 		// When the submit button is clicked (or a return keypress is heard),
 		// the value of the text input is passed into Chatty.addNewMessage()
   		function msgSubmit() {
-		  	var pattern = /\s/g;
-				if( userInput.value === "" || (userInput.value.match(pattern))) {
+		  	var pattern = userInput.value.trim();
+				if( pattern === "") {
 					alert("Text field cannot be empty");
 					userInput.value = "";
 				} else {
