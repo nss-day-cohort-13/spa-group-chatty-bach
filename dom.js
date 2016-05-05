@@ -20,6 +20,7 @@
 	// Main content elements
 		 var msgArea = document.getElementById("msgArea");			// Grabs the output div where all messages appear
 		 msgArea.addEventListener("click", Chatty.deleteMsg);		// Listens for click; runs function that calls Chatty.deleteMsg and passes in event.target
+		 msgArea.addEventListener("click", editMsg);
 
 		 // All variables below are defined for the purpose of toggling light/dark classes
 		 var headerDiv = document.getElementById("navBar");
@@ -63,7 +64,7 @@
   		function toggleLarge() {
   			contentWrap.classList.toggle("large");
   		}
-
+var edit= false;
 	// msgSubmit() - Callback from buttonSubmit
 		// When the submit button is clicked (or a return keypress is heard),
 		// the value of the text input is passed into Chatty.addNewMessage()
@@ -71,7 +72,14 @@
 		  	var pattern = userInput.value.trim();
 				if( pattern === "") {
 					alert("Text field cannot be empty");
+				} else if (edit===true){
+					var editMsg=document.getElementById(id);
+					var index=id.charAt(3);
+					console.log(index);
+					Chatty.editMessage(messageToEdit, userInput.value, id, index);
 					userInput.value = "";
+					edit=false;
+
 				} else {
 						var rButton = document.getElementsByClassName("rButton");
 						for (var i = 0; i < rButton.length; i++) {
@@ -82,5 +90,34 @@
 		  			Chatty.addNewMessage(userInput.value, selected);
 		  			userInput.value = "";
 		  			buttonClearAll.disabled = false;
-  			}
+	  		}
   		}
+var messageToEdit;
+  		function editMsg() {
+  			edit= true;
+  			messageToEdit=event.target.parentNode;
+  			id=messageToEdit.id;
+  			var userMessage=messageToEdit.querySelector("label");
+  			console.log(messageToEdit);
+  			console.log(id);
+  			if(event.target.className=== "edit") {
+  				userInput.focus();
+  				userInput.value= userMessage.innerHTML;
+  			}
+
+
+
+  		}
+
+// Custom Theme JS
+
+var changeBCG = document.getElementById("changeBackground");
+var changeFont = document.getElementById("changeFont");
+var save = document.getElementById("saveTheme")
+save.addEventListener("click", changeTheme);
+
+function changeTheme () {
+  var newBCG = changeBCG.value;
+  var newFont = changeFont.value;
+  msgArea.setAttribute("style", `background-color:${newBCG}; color:${newFont}`);
+}
