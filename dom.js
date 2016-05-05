@@ -51,6 +51,10 @@
  				h1Text[0].classList.toggle("dark-h-text");
  				h2Text[0].classList.toggle("dark-h-text");
  				msgArea.classList.toggle("dark-msg-area");
+ 				var messageClasses = document.getElementsByClassName("message");
+ 				for (var i = 0; i < messageClasses.length; i++) {
+ 					messageClasses[i].classList.toggle("dark-bg");
+ 				}
  			}
 
   // toggleLarge() - Callback from largeText
