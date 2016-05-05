@@ -14,18 +14,20 @@ var Chatty = (function(aug){
 					msgArea.removeChild(para[0]);
 					messages.push(newItem);
 					msgArea.innerHTML
-									  += "<p>" +
-									  newItem +
-									  " <button type='button' class='delete'>Delete</button> " + updateTime + "</p>";
+									  += "<div class='msg'><p class='userMsg'>" +
+									  newItem + "</p>"
+									  " <button type='button' class='edit'>Edit</button>" +
+									  "<button type='button' class='delete'>Delete</button> " + updateTime + "</div>";
 				}else {
 					messages.push(newItem);
 					updateTime = new Date();
 					updateTime = updateTime.toLocaleTimeString() + " " +updateTime.toLocaleDateString();
-					msgArea.innerHTML += "<p>" +
-									  newItem +
+					msgArea.innerHTML += "<div class='msg'><p class='userMsg'>" +
+									  newItem + "</p>" +
 									  " " +
-									  updateTime +
-									  " <button type='button' class='delete'>Delete</button></p>";
+									  updateTime + " <button type='button' class='edit'>Edit</button>" +
+									  " <button type='button' class='delete'>Delete</button></div>";
+
 				};
 
 		};

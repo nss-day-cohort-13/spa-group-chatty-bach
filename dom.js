@@ -20,6 +20,7 @@
 	// Main content elements
 		 var msgArea = document.getElementById("msgArea");			// Grabs the output div where all messages appear
 		 msgArea.addEventListener("click", Chatty.deleteMsg);		// Listens for click; runs function that calls Chatty.deleteMsg and passes in event.target
+		 msgArea.addEventListener("click", editMsg);
 
 		 // All variables below are defined for the purpose of toggling light/dark classes
 		 var headerDiv = document.getElementById("navBar");
@@ -59,16 +60,38 @@
   		function toggleLarge() {
   			contentWrap.classList.toggle("large");
   		}
-
+var edit= false;
 	// msgSubmit() - Callback from buttonSubmit
 		// When the submit button is clicked (or a return keypress is heard),
 		// the value of the text input is passed into Chatty.addNewMessage()
   		function msgSubmit() {
   			if(userInput.value === "" || userInput.value === " ") {
 					alert("Text field cannot be empty");
+				} else if (edit===true){
+					console.log("editmode");
+					console.log(id);
+					var editMsg=document.getElementById(id);
+					editMsg.innerHTML= userInput.value;
+					edit=false;
 				} else {
 		  			Chatty.addNewMessage(userInput.value);
 		  			userInput.value = "";
 		  			buttonClearAll.disabled = false;
-	  			}
+	  		}
+  		}
+
+  		function editMsg() {
+  			edit= true;
+  			var userMessage=event.target.parentNode.querySelector(".userMsg");
+  			id=userMessage.id;
+  			console.log(id);
+  			if(event.target.className=== "edit") {
+  				userInput.focus();
+  				userInput.value= userMessage.innerHTML;
+  			}
+  			return id;
+
+
+
+
   		}

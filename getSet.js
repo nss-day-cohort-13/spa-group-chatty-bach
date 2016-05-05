@@ -23,7 +23,7 @@ var Chatty = (function(aug) {
 	}
 
 	aug.deleteData = function (clickEvent) {
-		if (clickEvent.target.tagName === "BUTTON") {
+		if (clickEvent.target.className === "delete") {
 		var ex = clickEvent.currentTarget.id;
 		messages = messages.filter(function(message) {
 			return message.handle !== ex;
@@ -35,8 +35,8 @@ var Chatty = (function(aug) {
 	aug.loadMessages = function () {
 		var buildHTML = "";
 		for (var i = 0; i < messages.length; i++) {
-			buildHTML += `<p id="${messages[i].handle}">${messages[i].string}` +
-									 `<button class="delete">Delete</button></p>`;
+			buildHTML += `<div><p class='userMsg'id="${messages[i].handle}">${messages[i].string}</p>` +
+									 `<button class="edit">Edit</button><button class="delete">Delete</button></div>`;
 		}
 		outputDiv.innerHTML = buildHTML;
 		for (var i = 0; i < messages.length; i++) {
