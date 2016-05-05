@@ -35,7 +35,7 @@ var Chatty = (function(aug) {
 	aug.loadMessages = function () {
 		var buildHTML = "";
 		for (var i = 0; i < messages.length; i++) {
-			buildHTML += `<p id="${messages[i].handle}">${messages[i].string}` +
+			buildHTML += `<p id="${messages[i].handle}" class="message">${messages[i].string}` +
 									 `<button class="delete">Delete</button></p>`;
 		}
 		outputDiv.innerHTML = buildHTML;
