@@ -72,6 +72,7 @@ var edit= false;
 					console.log(id);
 					var editMsg=document.getElementById(id);
 					editMsg.innerHTML= userInput.value;
+					userInput.value="";
 					edit=false;
 				} else {
 		  			Chatty.addNewMessage(userInput.value);
@@ -90,8 +91,4 @@ var edit= false;
   				userInput.value= userMessage.innerHTML;
   			}
   			return id;
-
-
-
-
   		}
