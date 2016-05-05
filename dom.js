@@ -73,11 +73,11 @@ var edit= false;
 				if( userInput.value === "" || (userInput.value.match(pattern))) {
 					alert("Text field cannot be empty");
 				} else if (edit===true){
-					console.log("editmode");
-					console.log(id);
 					var editMsg=document.getElementById(id);
-					editMsg.innerHTML= userInput.value;
-					userInput.value="";
+					var index=id.charAt(3);
+					console.log(index);
+					Chatty.editMessage(messageToEdit, userInput.value, id, index);
+					userInput.value = "";
 					edit=false;
 
 				} else {
@@ -86,18 +86,19 @@ var edit= false;
 		  			buttonClearAll.disabled = false;
 	  		}
   		}
-
+var messageToEdit;
   		function editMsg() {
   			edit= true;
-  			var userMessage=event.target.parentNode.querySelector(".message");
-  			console.log(userMessage);
-  			id=userMessage.id;
+  			messageToEdit=event.target.parentNode;
+  			id=messageToEdit.id;
+  			var userMessage=messageToEdit.querySelector("label");
+  			console.log(messageToEdit);
   			console.log(id);
   			if(event.target.className=== "edit") {
   				userInput.focus();
   				userInput.value= userMessage.innerHTML;
   			}
-  			return id;
+
 
 
   		}
