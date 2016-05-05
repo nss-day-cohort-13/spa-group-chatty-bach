@@ -3,12 +3,43 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Chatty! Chatty! Kathy!</title>
 	<link rel="stylesheet" href="bootStrapNormalize.css">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Customize the Message Area</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div>
+	        	<h5>Change Background Color</h5>
+	        	<input type="color" id="changeBackground">
+	        </div>
+	        <div>
+	        	<h5>Change Font Color</h5>
+	        	<input type="color" id="changeFont">
+	        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        <button type="button" class="btn btn-primary" id="saveTheme">Save</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 	<div id="wrapper" class="wrapper">
 
@@ -29,7 +60,9 @@
 
 			<div id="buttons">
 				<button type="button" id="clear">clear all text</button>
-				<button type="button" id="theme">custom theme</button>
+				<!-- Button trigger modal -->
+				<button type="button" class="" data-toggle="modal" data-target="#myModal">Custom Theme</button>
+
 			</div>
 
 		</header>
@@ -49,6 +82,12 @@
 	<script src="getSet.js"></script>
 	<script src="xhr.js"></script>
 	<script src="dom.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </body>
 </html>
