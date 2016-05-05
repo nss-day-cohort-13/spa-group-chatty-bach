@@ -6,17 +6,17 @@ var Chatty = (function(aug) {
 
 	var outputDiv = document.getElementById("msgArea");
 
-	function Message (string, handle, updateTime) {
+	function Message (string, handle, person, updateTime) {
 		this.string = string;
 		this.handle = handle;
+		this.user = person;
 		this.time = updateTime;
 	}
 
-
-	aug.addNewMessage = function (newItem) {
+	aug.addNewMessage = function (newItem, person) {
 		var updateTime = new Date();
 		updateTime = updateTime.toLocaleTimeString() + " " + updateTime.toLocaleDateString();
-		var newMsg = new Message(newItem, `msg${idCounter}`, updateTime);
+		var newMsg = new Message(newItem, `msg${idCounter}`, person, updateTime);
 		messages.push(newMsg);
 		idCounter++;
 		Chatty.loadMessages();
@@ -47,9 +47,13 @@ var Chatty = (function(aug) {
 			messages.shift(messages[0]);
 		};
 		for (var i = 0; i < messages.length; i++) {
+<<<<<<< HEAD
+			buildHTML += `<p id="${messages[i].handle}" class="message"> <span class="strong">${messages[i].user}</span>: ${messages[i].string}<button class="delete">Delete</button><span class="timeStamp">${messages[i].time}</span></p>`;
+=======
 
 			buildHTML += `<p id="${messages[i].handle}" class="message"><label class='userMsg>'>${messages[i].string} </label><button class="edit">Edit</button><button class="delete">Delete</button><span class="timeStamp">${messages[i].time}</span></p>`;
 
+>>>>>>> master
 		}
 		outputDiv.innerHTML = buildHTML;
 		for (var i = 0; i < messages.length; i++) {
