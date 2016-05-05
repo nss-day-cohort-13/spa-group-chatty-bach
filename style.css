@@ -109,6 +109,8 @@ h2 {
 
 .timeStamp {
   display: block;
+  font-style: italic;
+  font-size: .8em;
 }
 
 .msgArea button {
@@ -117,6 +119,10 @@ h2 {
 
 p {
   width: 50%;
+}
+
+.strong {
+  font-weight: 600;
 }
 
 .delete {

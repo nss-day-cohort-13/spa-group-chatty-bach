@@ -73,7 +73,13 @@
 					alert("Text field cannot be empty");
 					userInput.value = "";
 				} else {
-		  			Chatty.addNewMessage(userInput.value);
+						var rButton = document.getElementsByClassName("rButton");
+						for (var i = 0; i < rButton.length; i++) {
+		  				if (rButton[i].checked) {
+		  					var selected = rButton[i].value;
+		  				}
+		  			}
+		  			Chatty.addNewMessage(userInput.value, selected);
 		  			userInput.value = "";
 		  			buttonClearAll.disabled = false;
   			}
