@@ -1,8 +1,7 @@
 var Chatty = (function (aug) {
 
   aug.deleteMsg = function (clickEvent) {
-    console.log("clickEvent: ", clickEvent);
-    if (clickEvent.target.tagName === "BUTTON") {
+    if (clickEvent.target.className === "delete") {
       Chatty.deleteData(clickEvent.currentTarget.id);
     }
   }
