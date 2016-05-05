@@ -78,3 +78,16 @@
 		  			buttonClearAll.disabled = false;
   			}
   		}
+
+// Custom Theme JS
+
+var changeBCG = document.getElementById("changeBackground");
+var changeFont = document.getElementById("changeFont");
+var save = document.getElementById("saveTheme")
+save.addEventListener("click", changeTheme);
+
+function changeTheme () {
+  var newBCG = changeBCG.value;
+  var newFont = changeFont.value;
+  msgArea.setAttribute("style", `background-color:${newBCG}; color:${newFont}`);
+}
