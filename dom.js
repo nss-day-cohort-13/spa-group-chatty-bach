@@ -64,7 +64,11 @@
 		// When the submit button is clicked (or a return keypress is heard),
 		// the value of the text input is passed into Chatty.addNewMessage()
   		function msgSubmit() {
-  			Chatty.addNewMessage(userInput.value);
-  			userInput.value="";
-  			buttonClearAll.disabled=false;
+  			if(userInput.value === "" || userInput.value === " ") {
+					alert("Text field cannot be empty");
+				} else {
+		  			Chatty.addNewMessage(userInput.value);
+		  			userInput.value = "";
+		  			buttonClearAll.disabled = false;
+	  			}
   		}
