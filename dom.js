@@ -45,7 +45,6 @@
  		// When the dark theme checkbox changes checked/unchecked,
  		// the page's content wrapper toggles the class for dark theme
  			function toggleDark() {
- 				console.log("click");
  				mainContent.classList.toggle("dark-bg");
  				headerDiv.classList.toggle("dark-h-bg");
  				logoDiv.classList.toggle("dark-bg");
