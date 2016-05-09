@@ -47,13 +47,7 @@ var Chatty = (function(aug) {
 			messages.shift(messages[0]);
 		};
 		for (var i = 0; i < messages.length; i++) {
-<<<<<<< HEAD
-			buildHTML += `<p id="${messages[i].handle}" class="message"> <span class="strong">${messages[i].user}</span>: ${messages[i].string}<button class="delete">Delete</button><span class="timeStamp">${messages[i].time}</span></p>`;
-=======
-
 			buildHTML += `<p id="${messages[i].handle}" class="message"><label class='userMsg>'>${messages[i].string} </label><button class="edit">Edit</button><button class="delete">Delete</button><span class="timeStamp">${messages[i].time}</span></p>`;
-
->>>>>>> master
 		}
 		outputDiv.innerHTML = buildHTML;
 		for (var i = 0; i < messages.length; i++) {
