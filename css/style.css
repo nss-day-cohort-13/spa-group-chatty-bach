@@ -52,6 +52,10 @@ h1 {
   color: #F1F3E3;
 }
 
+label.userMsg {
+  font-weight: 300;
+}
+
 label {
   margin: 10px;
 }
