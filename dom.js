@@ -76,22 +76,30 @@ var edit= false;
 					var editMsg=document.getElementById(id);
 					var index=id.charAt(3);
 					console.log(index);
-					Chatty.editMessage(messageToEdit, userInput.value, id, index);
+					Chatty.editMessage(userInput.value, id, index, person.innerText);
 					userInput.value = "";
 					edit=false;
-
 				} else {
-		  			Chatty.addNewMessage(userInput.value);
-		  			userInput.value = "";
-		  			buttonClearAll.disabled = false;
+					var rButton = document.querySelectorAll(".rButton");
+					for(var i= 0; i<rButton.length; i++) {
+						if (rButton[i].checked) {
+							var selected = rButton[i].value;
+						}
+					}
+	  			Chatty.addNewMessage(userInput.value, selected);
+	  			userInput.value = "";
+	  			buttonClearAll.disabled = false;
 	  		}
   		}
 var messageToEdit;
+var person
   		function editMsg() {
   			edit= true;
   			messageToEdit=event.target.parentNode;
   			id=messageToEdit.id;
   			var userMessage=messageToEdit.querySelector("label");
+  			person = messageToEdit.querySelector(".strong");
+  			console.log(person.innerText);
   			console.log(messageToEdit);
   			console.log(id);
   			if(event.target.className=== "edit") {
