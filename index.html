@@ -9,7 +9,6 @@
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -42,38 +41,38 @@
 	</div>
 
 	<div id="wrapper" class="wrapper">
-
-		<header id="navBar" class="navBar">
-
-			<div id="logo" class="logo">
-				<h1>chatty!</h1>
-			</div>
-
-			<div id="options">
-				<div>
-					<input class="rButton" type="radio" name="choice" value="Zeus" checked> Zeus
-					<input class="rButton" type="radio" name="choice" value="Poseidon"> Poseidon
-					<input class="rButton" type="radio" name="choice" value="Athena"> Athena
-					<input class="rButton" type="radio" name="choice" value="Hercules"> Hercules
-					<input class="rButton" type="radio" name="choice" value="Thor"> Thor
-					<input class="rButton" type="radio" name="choice" value="Beowulf"> Beowulf
-					<input class="rButton" type="radio" name="choice" value="Hades"> Hades
+		<nav id="navBar" class="navbar navbar-default container-fluid navBar">
+  		<div class="row">
+				<div id="logo" class="logo col-md-1 col-sm-2 col-xs-6">
+					<h1>chatty!</h1>
 				</div>
-				<input type="text" id="userInput" placeholder="Type Message Here">
-				<label><input type="checkbox" id="darkTheme">Dark Theme</label>
-				<label><input type="checkbox" id="largeText">Large Text</label>
-				<button type="button" id="submit">submit</button>
+				<div id="options" class="col-md-5 col-sm-5 col-xs-6">
+					<div>
+						<input class="rButton" type="radio" name="choice" value="Zeus" checked> Zeus
+						<input class="rButton" type="radio" name="choice" value="Poseidon"> Poseidon
+						<input class="rButton" type="radio" name="choice" value="Athena"> Athena
+						<input class="rButton" type="radio" name="choice" value="Hercules"> Hercules
+						<input class="rButton" type="radio" name="choice" value="Thor"> Thor
+						<input class="rButton" type="radio" name="choice" value="Beowulf"> Beowulf
+						<input class="rButton" type="radio" name="choice" value="Hades"> Hades
+					</div>
+					<input type="text" id="userInput" placeholder="Type Message Here">
+					<div><button type="button" class="btn-default btn" id="submit">submit</button></div>
+				</div>
+				<div class="col-md-2">
+					<label><input type="checkbox" id="darkTheme">Dark Theme</label>
+					<label><input type="checkbox" id="largeText">Large Text</label>
+				</div>
+				<div id="buttons" class="col-md-2 col-sm-2 col-xs-12">
+					<button type="button" id="clear" class="navbar-btn btn btn-default">clear all text</button>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Custom Theme</button>
 
-			</div>
+				</div>
 
-			<div id="buttons">
-				<button type="button" id="clear">clear all text</button>
-				<!-- Button trigger modal -->
-				<button type="button" class="" data-toggle="modal" data-target="#myModal">Custom Theme</button>
 
-			</div>
-
-		</header>
+</div>
+</nav>
 
 		<div id="main-content" class="main-content">
 
