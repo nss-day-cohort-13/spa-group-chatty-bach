@@ -1,4 +1,4 @@
-
+'use strict';
 // DOM handlers
 
 	// Header elements
@@ -92,6 +92,7 @@ var edit= false;
 		  			buttonClearAll.disabled = false;
 	  		}
   		}
+var id;
 var messageToEdit;
   		function editMsg() {  //get ID in the array to edit
   			edit= true;
