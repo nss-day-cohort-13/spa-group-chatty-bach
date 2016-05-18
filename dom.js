@@ -76,7 +76,7 @@ var edit= false;
 					var editMsg=document.getElementById(id);
 					var index=id.charAt(3);
 					console.log(index);
-					Chatty.editMessage(messageToEdit, userInput.value, id, index);
+					Chatty.editMessage(messageToEdit, userInput.value, id, person, index);
 					userInput.value = "";
 					edit=false;
 
@@ -93,10 +93,11 @@ var edit= false;
 	  		}
   		}
 var messageToEdit;
-  		function editMsg() {
+  		function editMsg() {  //get ID in the array to edit
   			edit= true;
   			messageToEdit=event.target.parentNode;
   			id=messageToEdit.id;
+  			person=messageToEdit.firstChild.innerHTML;
   			var userMessage=messageToEdit.querySelector("label");
   			console.log(messageToEdit);
   			console.log(id);
@@ -104,9 +105,6 @@ var messageToEdit;
   				userInput.focus();
   				userInput.value= userMessage.innerHTML;
   			}
-
-
-
   		}
 
 // Custom Theme JS
