@@ -11,7 +11,7 @@ var Chatty= (function(xhr){
 
 		for (i = 0; i < data.messages.length; i++) {
 			jsonMessages.push(data.messages[i]);
-			Chatty.addNewMessage(jsonMessages[i]);
+			Chatty.addNewMessage(jsonMessages[i].message, jsonMessages[i].user);
 		}
 	}
 
