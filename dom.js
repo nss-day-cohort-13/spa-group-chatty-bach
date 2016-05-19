@@ -77,7 +77,6 @@ function msgSubmit() {
 	} else if (edit===true){
 		var editMsg=document.getElementById(id);
 		var index=id.charAt(3);
-		console.log(index);
 		Chatty.editMessage(userInput.value, id, index, person.innerText);
 		userInput.value = "";
 		edit=false;
@@ -101,9 +100,6 @@ function editMsg() {
 	id=messageToEdit.id;
 	var userMessage=messageToEdit.querySelector("label");
 	person = messageToEdit.querySelector(".strong");
-	console.log(person.innerText);
-	console.log(messageToEdit);
-	console.log(id);
 	if(event.target.className=== "edit") {
 		userInput.focus();
 		userInput.value= userMessage.innerHTML;
